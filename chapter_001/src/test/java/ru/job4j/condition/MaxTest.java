@@ -27,4 +27,13 @@ public class MaxTest {
         int result = maxim.max(3, 1);
         assertThat(result, is(3));
     }
+    /**
+     * Тест для 3 чисел
+     */
+    @Test
+    public void whenThreeNumbers() {
+        Max test = new Max();
+        int result = test.maxThree(3, 1, 2);
+        assertThat(result, is(3));
+    }
 }
