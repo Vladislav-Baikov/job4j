@@ -6,7 +6,6 @@ package ru.job4j.loop;
  * @since 21.02.19
  */
 
-
 public class Counter {
     /**
      * Считает сумму четных элементов.
