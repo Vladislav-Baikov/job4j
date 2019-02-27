@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 
 public class CheckTest {
     /**
-     * Тест если нечетное количество всех True.
+     * Тест если нечетное количество, все True.
      */
     @Test
     public void whenDataMonoByTrueThenTrue() {
@@ -22,7 +22,7 @@ public class CheckTest {
         assertThat(result, is(true));
     }
     /**
-     * Тест если нечетное количество True и False.
+     * Тест если нечетное количество, True и False.
      */
     @Test
     public void whenDataNotMonoByTrueThenFalse() {
@@ -32,7 +32,7 @@ public class CheckTest {
         assertThat(result, is(false));
     }
     /**
-     * Тест если нечетное количество всех .
+     * Тест если нечетное количество, все False.
      */
     @Test
     public void whenDataMonoByFalseThenTrue() {
@@ -41,7 +41,9 @@ public class CheckTest {
         boolean result = check.mono(input);
         assertThat(result, is(true));
     }
-
+    /**
+     * Тест если четное количество, True и False.
+     */
     @Test
     public void whenDataNotMonoByEvenTrueThenFalse() {
         Check check = new Check();
