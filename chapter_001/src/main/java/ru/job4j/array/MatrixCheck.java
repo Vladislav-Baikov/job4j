@@ -12,7 +12,8 @@ public class MatrixCheck {
             if (data[i][i] != data[i + 1][i + 1]) {
                 result = false;
                 break;
-            } else if (data[i][data.length - 1 - i] != data[i + 1][data.length - 2 - i]) {
+            }
+            if (data[i][data.length - 1 - i] != data[i + 1][data.length - 2 - i]) {
                 result = false;
                 break;
             }
