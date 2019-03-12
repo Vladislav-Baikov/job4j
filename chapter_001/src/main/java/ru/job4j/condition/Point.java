@@ -1,5 +1,4 @@
 package ru.job4j.condition;
-
 /**
  * @author Vladislav Baikov (vagrant73@gmail.com)
  * @version v0.1
@@ -8,7 +7,6 @@ package ru.job4j.condition;
 public class Point {
     private int x;
     private int y;
-
     public Point(int x, int y) {
         this.x = x;
         this.y = y;

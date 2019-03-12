@@ -1,11 +1,9 @@
 package ru.job4j.calculator;
-
 public class Calculator {
     /**
      * Хранит результат
      */
     private double result;
-
     /**
      * Метод складывает два числа
      * @param first первая переменная
@@ -14,7 +12,6 @@ public class Calculator {
     public void add(double first, double second) {
         this.result = first + second;
     }
-
     /**
      * Метод вычитает одно число из другого
      * @param first первая переменная
@@ -46,5 +43,3 @@ public class Calculator {
         return this.result;
     }
 }
-
-// subtract, div, multiple: вычитание, деление и умножение.

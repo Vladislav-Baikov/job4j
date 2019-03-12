@@ -1,5 +1,4 @@
 package ru.job4j.array;
-
 /**
  * @author Vladislav Baikov (vagrant73@gmail.com)
  * @version v0.1
@@ -7,7 +6,6 @@ package ru.job4j.array;
  */
 public class ArrayChar {
     private char[] data;
-
     public ArrayChar(String line) {
         this.data = line.toCharArray();
     }
@@ -19,7 +17,6 @@ public class ArrayChar {
     public boolean startWith(String prefix) {
         boolean result = true;
         char[] value = prefix.toCharArray();
-        // проверить, что массив data имеет первые элементы, одинаковые с value
         for (int i = 0; i < value.length; i++) {
             if (value[i] != data[i]) {
                 result = false;

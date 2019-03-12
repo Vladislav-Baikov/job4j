@@ -1,12 +1,10 @@
 package ru.job4j.array;
 import java.util.Arrays;
-
 /**
  * @author Vladislav Baikov (vagrant73@gmail.com)
  * @version v0.1
  * @since 04.03.19
  */
-
 public class ArrayDublicate {
     public String[] remove(String[] array) {
         int dublicates = 0;

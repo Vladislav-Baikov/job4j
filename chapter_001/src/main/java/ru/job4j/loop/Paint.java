@@ -1,5 +1,4 @@
 package ru.job4j.loop;
-
 /**
  * @author Vladislav Baikov (vagrant73@gmail.com)
  * @version v0.1

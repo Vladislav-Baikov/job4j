@@ -1,10 +1,8 @@
 package ru.job4j.condition;
-
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
-
 /**
  * @author Vladislav Baikov (vagrant73@gmail.com)
  * @version v0.1

@@ -1,15 +1,12 @@
 package ru.job4j.loop;
-
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-
 /**
  * @author Vladislav Baikov (vagrant73@gmail.com)
  * @version v0.1
  * @since 22.02.19
  */
-
 public class FactorialTest {
     /**
      * Тест диапазон факториал 5 равен 120.
@@ -21,7 +18,6 @@ public class FactorialTest {
         int result = test.calc(5);
         assertThat(result, is(120));
     }
-
     /**
      * Тест диапазон факториал 0 равен 1.
      */

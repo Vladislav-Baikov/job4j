@@ -1,14 +1,8 @@
 package ru.job4j.calculator;
-
 /**
  * Корвертор валюты.
  */
 public class Converter {
-
-    /*
-      1 доллар = 60 рублей.
-      1 евро = 70 рублей.
-     */
     /**
      * Конвертируем рубли в евро.
      * @param value рубли.

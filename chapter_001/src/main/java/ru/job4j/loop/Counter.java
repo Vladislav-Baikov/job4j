@@ -1,11 +1,9 @@
 package ru.job4j.loop;
-
 /**
  * @author Vladislav Baikov (vagrant73@gmail.com)
  * @version v0.1
  * @since 21.02.19
  */
-
 public class Counter {
     /**
      * Считает сумму четных элементов.
