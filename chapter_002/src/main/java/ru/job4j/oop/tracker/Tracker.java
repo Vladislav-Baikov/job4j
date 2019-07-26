@@ -58,15 +58,14 @@ public class Tracker {
      * @return allItems
      */
     public Item[] findAll() {
-        Item[] temp = this.items;
-        Item[] result = new Item[0];
+        Item[] result = this.items;
         int j = 0;
-        for (int i = 0; i < temp.length; i++) {
-            j++;
-            if (temp[i] == null) {
-                System.arraycopy(temp, 0, result, 0, j);
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] == null) {
+                result = Arrays.copyOf(result, j);
                 break;
             }
+            j++;
         }
         return result;
     }

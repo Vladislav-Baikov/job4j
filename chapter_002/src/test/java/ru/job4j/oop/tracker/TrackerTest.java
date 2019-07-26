@@ -59,7 +59,6 @@ public class TrackerTest {
                 break;
             }
         }
-        System.out.println(arr.length);
         assertThat(result, is(true));
     }
 }
