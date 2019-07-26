@@ -1,0 +1,125 @@
+package ru.job4j.oop.tracker;
+
+import java.util.Arrays;
+
+import static java.lang.Math.random;
+
+public class Tracker {
+    /**
+     * Массив для хранение заявок.
+     */
+    private final Item[] items = new Item[100];
+    /**
+     * Указатель ячейки для новой заявки.
+     */
+    private int position = 0;
+    /**
+     * Метод реализаущий добавление заявки в хранилище
+     * @param item новая заявка
+     */
+    public Item add(Item item) {
+        item.setId(this.generateId());
+        this.items[this.position++] = item;
+        return item;
+    }
+    /**
+     * Метод заменяет заявку в хранилище
+     * @param id ключ заменяемой заявки, item новая заявка
+     * @return true, если замена произошла
+     */
+    public boolean replace(String id, Item item) {
+        boolean result = false;
+        for (int i = 0; i < position; i++) {
+            if (items[i].getId().equals(id)) {
+                items[i] = item;
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+    /**
+     * Метод удаляет ячйку в массиве items
+     * @param id ключ удаляемой заявки
+     * @return true, если удаление произошло
+     */
+    public boolean delete(String id) {
+        boolean result = false;
+        for (int i = 0; i < position; i++) {
+            if (items[i].equals(findById(id))) {
+                System.arraycopy(items, i, items, i + 1, items.length - i + 1);
+                result = true;
+            }
+        }
+        return result;
+    }
+    /**
+     * Метод возвращает массив items без null элементов
+     * @return allItems
+     */
+    public Item[] findAll() {
+        Item[] temp = this.items;
+        Item[] result = new Item[0];
+        int j = 0;
+        for (int i = 0; i < temp.length; i++) {
+            j++;
+            if (temp[i] == null) {
+                System.arraycopy(temp, 0, result, 0, j);
+                break;
+            }
+        }
+        return result;
+    }
+    /**
+     * Метод возвращает массив items без null элементов
+     * @return allItems
+     */
+    public Item[] findByName(String key) {
+        Item[] result = new Item[this.position];
+        int index = 0;
+        for (int i = 0; i < this.position; i++){
+            if (items[i].getName().contains(key)){
+                result[index] = items[i];
+                index++;
+            }
+        }
+        int j = 0;
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] == null) {
+                System.arraycopy(result, 0, result, 0, j);
+            } else {
+                j++;
+            }
+        }
+        return result;
+    }
+    /**
+     * Метод генерирует уникальный ключ для заявки.
+     * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
+     * @return Уникальный ключ.
+     */
+    public String generateId() {
+        //Реализовать метод генерации.
+        Integer id = (int) random() * (int) Math.pow(10, 4);
+        return id.toString();
+    }
+    /**
+     *  Метод поиска заявки по id
+     * @return Заявка.
+     */
+    public Item findById(String id) {
+        Item result = null;
+        for (Item item: this.items) {
+            if (item != null && item.getId().equals(id)) {
+                result = item;
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] Array = {1,2};
+        System.arraycopy(Array, 0, Array, 0, 1);
+        System.out.println(Arrays.toString(Array));
+    }
+}
