@@ -45,9 +45,7 @@ public class TrackerTest {
         tracker.add(itemOne);
         tracker.add(itemTwo);
         tracker.delete(itemOne.getId());
-        boolean result = tracker.delete(itemOne.getId());
-        assertThat(result, is(true));
-        //assertThat(tracker.findAll()[0].getName(), is("test2"));
+        assertThat(tracker.findAll()[0].getName(), is("test2"));
     }
 
     @Test

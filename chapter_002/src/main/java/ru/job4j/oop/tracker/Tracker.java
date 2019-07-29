@@ -46,10 +46,8 @@ public class Tracker {
     public boolean delete(String id) {
         boolean result = false;
         for (int i = 0; i < this.position - 1; i++) {
-            if (items[i].equals(id)) {
-                System.out.println(items[i]);
-                System.out.println(findById(id));
-                //System.arraycopy(items, i + 1, items, i, items.length - i);
+            if (items[i].getId().equals(id)) {
+                System.arraycopy(items, i + 1, items, i, items.length - i - 1);
                 result = true;
             }
         }
@@ -115,11 +113,5 @@ public class Tracker {
             }
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        int[] Array = {1,2};
-        System.arraycopy(Array, 0, Array, 0, 1);
-        System.out.println(Arrays.toString(Array));
     }
 }
