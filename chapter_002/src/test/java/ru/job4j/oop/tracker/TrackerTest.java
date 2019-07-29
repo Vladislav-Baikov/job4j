@@ -1,6 +1,10 @@
 package ru.job4j.oop.tracker;
 
 import org.junit.Test;
+
+import java.util.Arrays;
+
+import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -36,15 +40,14 @@ public class TrackerTest {
     @Test
     public void whenDeleteItemThenRemainingItemsWillBeMoved() {
         Tracker tracker = new Tracker();
-        long createdOne = System.currentTimeMillis();
-        long createdTwo = System.currentTimeMillis();
-        Item itemOne = new Item("test1","testDesc", createdOne);
-        Item itemTwo = new Item("test2", "testDesc", createdTwo);
+        Item itemOne = new Item("test1", "testDesc1", 123L);
+        Item itemTwo = new Item("test2", "testDesc2", 321L);
         tracker.add(itemOne);
         tracker.add(itemTwo);
-        itemTwo.setId(itemOne.getId());
         tracker.delete(itemOne.getId());
-        //assertThat(itemOne., is());
+        boolean result = tracker.delete(itemOne.getId());
+        assertThat(result, is(true));
+        //assertThat(tracker.findAll()[0].getName(), is("test2"));
     }
 
     @Test
@@ -60,5 +63,14 @@ public class TrackerTest {
             }
         }
         assertThat(result, is(true));
+    }
+
+    @Test
+    public void findById() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("test1", "testDesc1", 123L);
+        tracker.add(item);
+        Item result = tracker.findById(item.getId());
+        assertThat(result, is(item));
     }
 }

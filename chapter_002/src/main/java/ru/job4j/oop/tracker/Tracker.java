@@ -45,9 +45,11 @@ public class Tracker {
      */
     public boolean delete(String id) {
         boolean result = false;
-        for (int i = 0; i < position; i++) {
-            if (items[i].equals(findById(id))) {
-                System.arraycopy(items, i, items, i + 1, items.length - i + 1);
+        for (int i = 0; i < this.position - 1; i++) {
+            if (items[i].equals(id)) {
+                System.out.println(items[i]);
+                System.out.println(findById(id));
+                //System.arraycopy(items, i + 1, items, i, items.length - i);
                 result = true;
             }
         }
@@ -98,7 +100,6 @@ public class Tracker {
      * @return Уникальный ключ.
      */
     public String generateId() {
-        //Реализовать метод генерации.
         Integer id = (int) random() * (int) Math.pow(10, 4);
         return id.toString();
     }
