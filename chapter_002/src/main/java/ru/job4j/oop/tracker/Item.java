@@ -7,7 +7,7 @@ public class Item {
     private String name;
     private String desc;
     private long time;
-    public Item(String name, String desc, long time){
+    public Item(String name, String desc, long time) {
         this.name = name;
         this.desc = desc;
         this.time = time;
@@ -38,12 +38,19 @@ public class Item {
     }
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Item item = (Item) o;
-        return time == item.time &&
-                Objects.equals(id, item.id) &&
-                Objects.equals(name, item.name) &&
+        return time == item.time
+                &&
+                Objects.equals(id, item.id)
+                &&
+                Objects.equals(name, item.name)
+                &&
                 Objects.equals(desc, item.desc);
     }
     @Override

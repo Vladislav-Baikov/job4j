@@ -13,7 +13,7 @@ public class TrackerTest {
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
         long created = System.currentTimeMillis();
-        Item item = new Item("test1","testDescription",created);
+        Item item = new Item("test1", "testDescription", created);
         tracker.add(item);
         Item result = tracker.findById(item.getId());
         assertThat(result.getName(), is(item.getName()));
@@ -21,9 +21,9 @@ public class TrackerTest {
     @Test
     public void whenReplaceNameThenReturnNewName() {
         Tracker tracker = new Tracker();
-        Item previous = new Item("test1","testDescription",123L);
+        Item previous = new Item("test1", "testDescription", 123L);
         tracker.add(previous);
-        Item next = new Item("test2","testDescription2",1234L);
+        Item next = new Item("test2", "testDescription2", 1234L);
         next.setId(previous.getId());
         tracker.replace(previous.getId(), next);
         assertThat(tracker.findById(previous.getId()).getName(), is("test2"));
@@ -54,8 +54,8 @@ public class TrackerTest {
         boolean result = true;
         tracker.add(new Item("mail", "mailDesc", 2L));
         Item[] arr = tracker.findAll();
-        for (int i = 0; i < arr.length; i++){
-            if (arr[i] == null){
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == null) {
                 result = false;
                 break;
             }
