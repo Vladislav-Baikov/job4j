@@ -45,9 +45,10 @@ public class Tracker {
      */
     public boolean delete(String id) {
         boolean result = false;
-        for (int i = 0; i < this.position - 1; i++) {
+        for (int i = 0; i < this.position; i++) {
             if (items[i].getId().equals(id)) {
                 System.arraycopy(items, i + 1, items, i, items.length - i - 1);
+                this.position--;
                 result = true;
             }
         }
@@ -58,16 +59,7 @@ public class Tracker {
      * @return allItems
      */
     public Item[] findAll() {
-        Item[] result = this.items;
-        int j = 0;
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] == null) {
-                result = Arrays.copyOf(result, j);
-                break;
-            }
-            j++;
-        }
-        return result;
+        return Arrays.copyOf(this.items, this.position);
     }
     /**
      * Метод возвращает массив items без null элементов
@@ -75,21 +67,14 @@ public class Tracker {
      */
     public Item[] findByName(String key) {
         Item[] result = new Item[this.position];
-        int index = 0;
-        for (int i = 0; i < this.position; i++) {
-            if (items[i].getName().contains(key)) {
-                result[index] = items[i];
-                index++;
-            }
-        }
         int j = 0;
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] == null) {
-                System.arraycopy(result, 0, result, 0, j);
-            } else {
+        for (int i = 0; i < this.position; i++) {
+            if (this.items[i].getName().contains(key)) {
+                result[j] = this.items[i];
                 j++;
             }
         }
+        System.arraycopy(result, 0, result, 0, j);
         return result;
     }
     /**
