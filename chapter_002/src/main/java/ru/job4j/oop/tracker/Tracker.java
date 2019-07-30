@@ -72,6 +72,7 @@ public class Tracker {
             if (this.items[i].getName().contains(key)) {
                 result[j] = this.items[i];
                 j++;
+                j++;
             }
         }
         System.arraycopy(result, 0, result, 0, j);
