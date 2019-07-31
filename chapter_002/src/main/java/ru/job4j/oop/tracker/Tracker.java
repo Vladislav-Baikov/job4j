@@ -29,6 +29,7 @@ public class Tracker {
      */
     public boolean replace(String id, Item item) {
         boolean result = false;
+        item.setId(id);
         for (int i = 0; i < position; i++) {
             if (items[i].getId().equals(id)) {
                 items[i] = item;
@@ -74,7 +75,7 @@ public class Tracker {
                 j++;
             }
         }
-        System.arraycopy(result, 0, result, 0, j);
+        Arrays.copyOf(result, j);
         return result;
     }
     /**
@@ -92,9 +93,10 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-        for (Item item: this.items) {
-            if (item != null && item.getId().equals(id)) {
-                result = item;
+        for (int i = 0; i < position; i++) {
+            if (items[i].getId().equals(id)) {
+                result = items[i];
+                break;
             }
         }
         return result;
