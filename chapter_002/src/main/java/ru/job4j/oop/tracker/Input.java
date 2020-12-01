@@ -1,4 +1,6 @@
 package ru.job4j.oop.tracker;
 
-public class Input {
+interface Input {
+    String input();
 }
+
