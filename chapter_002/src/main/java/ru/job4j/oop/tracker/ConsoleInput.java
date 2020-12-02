@@ -8,5 +8,5 @@ public class ConsoleInput implements Input {
     @Override
     public String input() {
         return scanner.nextLine();
-    }//
+    }
 }

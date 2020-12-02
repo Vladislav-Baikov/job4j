@@ -14,5 +14,5 @@ public class StabInput implements Input {
         String result = answers[position];
         position++;
         return result;
-    }//
+    }
 }
