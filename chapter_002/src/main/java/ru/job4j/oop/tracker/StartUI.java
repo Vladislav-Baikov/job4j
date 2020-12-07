@@ -1,6 +1,15 @@
 package ru.job4j.oop.tracker;
 
 public class StartUI {
+    //private final Output out;
+   /* public StartUI(Output out) {
+        this.out = out;
+    }*/
+    /*String[] programActions;
+
+    StartUI() {
+        programActions[];
+    }*/
 
     public void actionExecutor(Input input, Tracker tracker) {
         boolean run = true;
@@ -76,6 +85,12 @@ public class StartUI {
         }
     }
 
+    /*private void showMenu(answers) {
+        out.println("Menu.");
+        for (int index = 0; index < programActions.length; index++) {
+            out.println(index + ". " + programActions[index].name());
+        }
+    }*/
     private void showMenu() {
         System.out.println("Menu.");
         System.out.println("0. Add new Item");

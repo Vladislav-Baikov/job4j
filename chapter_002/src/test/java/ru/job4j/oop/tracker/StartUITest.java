@@ -31,4 +31,19 @@ public class StartUITest {
         Item allItems[] = tracker.findAll();
         Assert.assertThat(allItems.length, is (0));
     }
+
+    @Test
+    public void  whenFindAllItems () {
+
+    }
+
+    @Test
+    public void  whenFindByNameItem () {
+
+    }
+
+    @Test
+    public void  whenFindByIdItem () {
+
+    }
 }
