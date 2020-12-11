@@ -1,8 +1,6 @@
 package ru.job4j.oop.tracker.ui;
 
-import ru.job4j.oop.tracker.actions.CreateAction;
-import ru.job4j.oop.tracker.actions.EditAction;
-import ru.job4j.oop.tracker.actions.FindAllAction;
+import ru.job4j.oop.tracker.actions.*;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.input.ConsoleInput;
 import ru.job4j.oop.tracker.input.Input;
@@ -35,38 +33,14 @@ public class StartUI {
                 EditAction editAction = new EditAction();
                 editAction.doAction(input, tracker);
             } else if (select == 3) {
-                System.out.println("=== Delete Item ====");
-                System.out.print("Enter id of Item you want to delete: ");
-                String id = input.input();
-                if (tracker.delete(id)) {
-                    System.out.println("Success");
-                } else {
-                    System.out.println("Fail");
-                }
+                DeleteAction deleteAction = new DeleteAction();
+                deleteAction.doAction(input, tracker);
             } else if (select == 4) {
-                System.out.println("=== Find Item by id ====");
-                System.out.print("Enter id of Item you want to find: ");
-                String id = input.input();
-                Item findItem = tracker.findById(id);
-                if (findItem == null) {
-                    System.out.println("Item with entered id is not found");
-                } else {
-                    System.out.println("Found Item:");
-                    System.out.println(findItem.getName());
-                }
+                FindAllAction findAllAction = new FindAllAction();
+                findAllAction.doAction(input, tracker);
             } else if (select == 5) {
-                System.out.println("=== Find Items by name ====");
-                System.out.print("Enter name of Items you want to find: ");
-                String name = input.input();
-                Item[] findItem =  tracker.findByName(name);
-                if (findItem.length == 0) {
-                    System.out.println("Items with entered name is not found");
-                } else {
-                    System.out.println("Found Items:");
-                    for (int i=0; i < findItem.length; i++) {
-                        System.out.println(findItem[i]);
-                    }
-                }
+                FindByNameAction findByNameAction = new FindByNameAction();
+                findByNameAction.doAction(input, tracker);
             } else if (select == 6) {
                 run = false;
             }
