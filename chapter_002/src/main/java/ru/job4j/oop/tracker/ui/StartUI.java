@@ -1,4 +1,12 @@
-package ru.job4j.oop.tracker;
+package ru.job4j.oop.tracker.ui;
+
+import ru.job4j.oop.tracker.actions.CreateAction;
+import ru.job4j.oop.tracker.actions.EditAction;
+import ru.job4j.oop.tracker.actions.FindAllAction;
+import ru.job4j.oop.tracker.tracker.Item;
+import ru.job4j.oop.tracker.input.ConsoleInput;
+import ru.job4j.oop.tracker.input.Input;
+import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class StartUI {
     //private final Output out;
@@ -18,34 +26,14 @@ public class StartUI {
             System.out.print("Select: ");
             int select = Integer.parseInt(input.input());
             if (select == 0) {
-                System.out.println("=== Create a new Item ====");
-                System.out.print("Enter name: ");
-                String name = input.input();
-                if (name.length() == 0) {
-                    System.out.println("Fail. The name is empty");
-                } else {
-                    Item addItem = new Item(name, "desc", 1);
-                    tracker.add(addItem);
-                    System.out.println("Item created");
-                }
+                CreateAction createAction = new CreateAction();
+                createAction.doAction(input, tracker);
             } else if (select == 1) {
-                Item[] allItems = tracker.findAll();
-                System.out.println("List of all Items:");
-                for (int i=0; i < allItems.length; i++) {
-                    System.out.println(allItems[i]);
-                }
+                FindAllAction findAllAction = new FindAllAction();
+                findAllAction.doAction(input, tracker);
             } else if (select == 2) {
-                System.out.println("=== Edit Item ====");
-                System.out.print("Enter id of Item to change: ");
-                String id = input.input();
-                System.out.print("Enter new name of Item: ");
-                String name = input.input();
-                Item newItem = new Item(name, "new", 1);
-                if (tracker.replace(id, newItem)) {
-                    System.out.println("Success");
-                } else {
-                    System.out.println("Fail");
-                }
+                EditAction editAction = new EditAction();
+                editAction.doAction(input, tracker);
             } else if (select == 3) {
                 System.out.println("=== Delete Item ====");
                 System.out.print("Enter id of Item you want to delete: ");

@@ -1,6 +1,12 @@
 package ru.job4j.oop.tracker;
 import org.junit.Assert;
 import org.junit.Test;
+import ru.job4j.oop.tracker.input.Input;
+import ru.job4j.oop.tracker.input.StabInput;
+import ru.job4j.oop.tracker.tracker.Item;
+import ru.job4j.oop.tracker.tracker.Tracker;
+import ru.job4j.oop.tracker.ui.StartUI;
+
 import static org.hamcrest.Matchers.is;
 
 public class StartUITest {

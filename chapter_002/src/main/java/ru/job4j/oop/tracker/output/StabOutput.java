@@ -1,4 +1,4 @@
-package ru.job4j.oop.tracker;
+package ru.job4j.oop.tracker.output;
 
 public class StabOutput implements Output{
     private final StringBuilder buffer = new StringBuilder();
@@ -13,8 +13,4 @@ public class StabOutput implements Output{
         buffer.append(System.lineSeparator());
     }
 
-    @Override
-    public String toString() {
-        return buffer.toString();
-    }
 }

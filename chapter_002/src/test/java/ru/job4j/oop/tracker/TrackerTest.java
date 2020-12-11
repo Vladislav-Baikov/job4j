@@ -1,10 +1,8 @@
 package ru.job4j.oop.tracker;
 
 import org.junit.Test;
-import ru.job4j.oop.tracker.Item;
-import ru.job4j.oop.tracker.Tracker;
-
-import java.util.Arrays;
+import ru.job4j.oop.tracker.tracker.Item;
+import ru.job4j.oop.tracker.tracker.Tracker;
 
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.is;
