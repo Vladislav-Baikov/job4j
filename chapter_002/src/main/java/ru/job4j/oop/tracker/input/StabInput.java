@@ -1,7 +1,5 @@
 package ru.job4j.oop.tracker.input;
 
-import ru.job4j.oop.tracker.input.Input;
-
 public class StabInput implements Input {
 
     private final String[] answers;

@@ -40,7 +40,14 @@ public class StartUITest {
 
     @Test
     public void  whenFindAllItems () {
-
+        Tracker tracker = new Tracker();
+        for (int i = 0; i < 10; i++) {
+            tracker.add(new Item("name", "", 1));
+        }
+        Input stabInput = new StabInput(new String[] {"1"});
+        new StartUI().actionExecutor(stabInput, tracker);
+        Item allItems[] = tracker.findAll();
+        Assert.assertThat(allItems.length, is (10));
     }
 
     @Test
