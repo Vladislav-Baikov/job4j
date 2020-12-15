@@ -1,16 +1,13 @@
 package ru.job4j.oop.tracker.output;
 
 public class StabOutput implements Output{
-    private final StringBuilder buffer = new StringBuilder();
 
     @Override
-    public void println(Object obj) {
-        if (obj != null) {
-            buffer.append(obj.toString());
-        } else {
-            buffer.append("null");
-        }
-        buffer.append(System.lineSeparator());
+    public String outputSuccess () {
+        return "Success";
     }
-
+    @Override
+    public String outputError () {
+        return "Fail";
+    }
 }

@@ -1,21 +1,11 @@
 package ru.job4j.oop.tracker.ui;
 
 import ru.job4j.oop.tracker.actions.*;
-import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.input.ConsoleInput;
 import ru.job4j.oop.tracker.input.Input;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class StartUI {
-    //private final Output out;
-   /* public StartUI(Output out) {
-        this.out = out;
-    }*/
-    /*String[] programActions;
-
-    StartUI() {
-        programActions[];
-    }*/
 
     public void actionExecutor(Input input, Tracker tracker) {
         boolean run = true;

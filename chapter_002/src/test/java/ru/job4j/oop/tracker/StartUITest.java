@@ -3,6 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import ru.job4j.oop.tracker.input.Input;
 import ru.job4j.oop.tracker.input.StabInput;
+import ru.job4j.oop.tracker.output.StabOutput;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
 import ru.job4j.oop.tracker.ui.StartUI;
@@ -17,6 +18,8 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         new StartUI().actionExecutor(stabInput, tracker);
         Assert.assertThat("Item name", is (tracker.findAll()[0].getName()));
+        StabOutput stabOutput = new StabOutput();
+        Assert.assertThat("Success", is (stabOutput.outputSuccess()));
     }
 
     @Test
