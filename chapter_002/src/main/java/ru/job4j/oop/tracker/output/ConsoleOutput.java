@@ -12,11 +12,11 @@ public class ConsoleOutput implements Output {
     @Override
     public String outputSuccess () {
         System.out.println(successMassage);
-        return successMassage;
+        return "Success";
     }
     @Override
     public String outputError () {
         System.out.println(errorMassage);
-        return errorMassage;
+        return "Fail";
     }
 }
