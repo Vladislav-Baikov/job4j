@@ -2,8 +2,8 @@ package ru.job4j.oop.tracker;
 import org.junit.Assert;
 import org.junit.Test;
 import ru.job4j.oop.tracker.input.Input;
-import ru.job4j.oop.tracker.input.StabInput;
-import ru.job4j.oop.tracker.output.StabOutput;
+import ru.job4j.oop.tracker.input.StubInput;
+import ru.job4j.oop.tracker.output.StubOutput;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
 import ru.job4j.oop.tracker.ui.StartUI;
@@ -14,19 +14,17 @@ public class StartUITest {
 
     @Test
     public void whenCreateItem() {
-        Input stabInput = new StabInput(new String[] {"0", "Item name", "6"});
+        Input stabInput = new StubInput(new String[] {"0", "Item name", "6"});
         Tracker tracker = new Tracker();
         new StartUI().actionExecutor(stabInput, tracker);
         Assert.assertThat("Item name", is (tracker.findAll()[0].getName()));
-        StabOutput stabOutput = new StabOutput();
-        Assert.assertThat("Success", is (stabOutput.outputSuccess()));
     }
 
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
         String id = tracker.add(new Item("name", "", 1)).getId();
-        Input stabInput = new StabInput(new String[] {"2", id, "newName", "6"});
+        Input stabInput = new StubInput(new String[] {"2", id, "newName", "6"});
         new StartUI().actionExecutor(stabInput, tracker);
         Assert.assertThat("newName", is (tracker.findAll()[0].getName()));
     }
@@ -35,7 +33,7 @@ public class StartUITest {
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
         String id = tracker.add(new Item("name", "", 1)).getId();
-        Input stabInput = new StabInput(new String[] {"3", id, "6"});
+        Input stabInput = new StubInput(new String[] {"3", id, "6"});
         new StartUI().actionExecutor(stabInput, tracker);
         Item allItems[] = tracker.findAll();
         Assert.assertThat(allItems.length, is (0));
@@ -44,13 +42,13 @@ public class StartUITest {
     @Test
     public void  whenFindAllItems () {
         Tracker tracker = new Tracker();
-        for (int i = 0; i < 10; i++) {
-            tracker.add(new Item("name", "", 1));
+        for (int i = 0; i < 5; i++) {
+            tracker.add(new Item("", "", 1));
         }
-        Input stabInput = new StabInput(new String[] {"1"});
-        new StartUI().actionExecutor(stabInput, tracker);
+        Input stubInput = new StubInput(new String[] {"1", "6"});
+        new StartUI().actionExecutor(stubInput, tracker);
         Item allItems[] = tracker.findAll();
-        Assert.assertThat(allItems.length, is (10));
+        Assert.assertThat(allItems.length, is (5));
     }
 
     @Test

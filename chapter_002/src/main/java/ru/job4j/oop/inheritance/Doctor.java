@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.oop.inheritance;
 
 public class Doctor extends Profession {
     public Doctor(String name, String profession) {
