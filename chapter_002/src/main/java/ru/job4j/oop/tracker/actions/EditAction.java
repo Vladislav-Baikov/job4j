@@ -5,13 +5,6 @@ import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class EditAction implements Action {
-    private String name;
-
-    @Override
-    public String getName() {
-        name = "Edit Item";
-        return name;
-    }
 
     @Override
     public void doAction(Input input, Tracker tracker) {

@@ -5,13 +5,6 @@ import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class FindByNameAction implements Action {
-    private String name;
-
-    @Override
-    public String getName() {
-        name = "Find Item by name";
-        return name;
-    }
 
     @Override
     public void doAction(Input input, Tracker tracker) {
