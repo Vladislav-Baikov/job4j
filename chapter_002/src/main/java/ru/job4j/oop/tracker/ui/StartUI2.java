@@ -8,7 +8,7 @@ import ru.job4j.oop.tracker.output.Output;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class StartUI2 {
-   /* private final Output out;
+    private final Output out;
 
     public StartUI2(Output out) {
         this.out = out;
@@ -41,5 +41,5 @@ public class StartUI2 {
                 *//* another actions *//*
         };
         new StartUI(output).init(input, tracker, actions);
-    }*/
+    }
 }

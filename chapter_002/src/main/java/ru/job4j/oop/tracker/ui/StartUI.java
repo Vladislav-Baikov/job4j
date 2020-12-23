@@ -26,8 +26,8 @@ public class StartUI {
                 DeleteAction deleteAction = new DeleteAction();
                 deleteAction.doAction(input, tracker);
             } else if (select == 4) {
-                FindAllAction findAllAction = new FindAllAction();
-                findAllAction.doAction(input, tracker);
+                FindByIdAction findByIdAction = new FindByIdAction();
+                findByIdAction.doAction(input, tracker);
             } else if (select == 5) {
                 FindByNameAction findByNameAction = new FindByNameAction();
                 findByNameAction.doAction(input, tracker);

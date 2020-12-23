@@ -1,6 +1,8 @@
 package ru.job4j.oop.tracker.actions;
 
 import ru.job4j.oop.tracker.input.Input;
+import ru.job4j.oop.tracker.output.ConsoleOutput;
+import ru.job4j.oop.tracker.output.Output;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
@@ -14,8 +16,8 @@ public class FindByIdAction implements Action {
         if (findItem == null) {
             System.out.println("Item with entered id is not found");
         } else {
-            System.out.println("Found Item:");
-            System.out.println(findItem.getName());
+            Output output = new ConsoleOutput();
+            output.println(findItem);
         }
     }
 }
