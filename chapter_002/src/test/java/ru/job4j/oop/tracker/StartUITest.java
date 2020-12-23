@@ -52,12 +52,24 @@ public class StartUITest {
     }
 
     @Test
-    public void  whenFindByNameItem () {
-
+    public void  whenFindByIdItem () {
+        Tracker tracker = new Tracker();
+        tracker.add(new Item("name", "", 1));
+        String id = (tracker.findByName("name")[0]).getId();
+        Input stubInput = new StubInput(new String[] {"4", id, "6"});
+        new StartUI().actionExecutor(stubInput, tracker);
+        Assert.assertThat(tracker.findById(id).getName(), is ("name"));
     }
 
     @Test
-    public void  whenFindByIdItem () {
-
+    public void  whenFindByNameItem () {
+        Tracker tracker = new Tracker();
+        for (int i = 0; i < 3; i++) {
+            tracker.add(new Item("name", "", 1));
+        }
+        Input stubInput = new StubInput(new String[] {"5", "name", "6"});
+        new StartUI().actionExecutor(stubInput, tracker);
+        Item foundItems[] = tracker.findByName("name");
+        Assert.assertThat(foundItems.length, is (3));
     }
 }
