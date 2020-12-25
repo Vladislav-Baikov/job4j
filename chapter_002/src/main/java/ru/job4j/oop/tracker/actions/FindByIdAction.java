@@ -21,7 +21,7 @@ public class FindByIdAction implements Action {
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Find Item by Id ===");
         String id = input.askStr("Enter Id: ");
-        tracker.findById(id);
+        out.println(tracker.findById(id));
         return true;
     }
 

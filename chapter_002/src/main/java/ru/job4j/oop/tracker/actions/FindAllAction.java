@@ -2,7 +2,6 @@ package ru.job4j.oop.tracker.actions;
 
 import ru.job4j.oop.tracker.input.Input;
 import ru.job4j.oop.tracker.output.Output;
-import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class FindAllAction implements Action {
@@ -21,7 +20,7 @@ public class FindAllAction implements Action {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Find all Items ===");
-        Item[] allItems = tracker.findAll();
+        out.println(tracker.findAll());
         return true;
     }
 

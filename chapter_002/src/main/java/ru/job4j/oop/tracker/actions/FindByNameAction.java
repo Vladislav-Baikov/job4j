@@ -21,7 +21,7 @@ public class FindByNameAction implements Action {
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Find Item by name ===");
         String name = input.askStr("Enter name: ");
-        tracker.findByName(name);
+        out.println(tracker.findByName(name));
         return true;
     }
 
