@@ -3,6 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import ru.job4j.oop.tracker.input.Input;
 import ru.job4j.oop.tracker.input.StubInput;
+import ru.job4j.oop.tracker.output.Output;
 import ru.job4j.oop.tracker.output.StubOutput;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
@@ -41,14 +42,23 @@ public class StartUITest {
 
     @Test
     public void  whenFindAllItems () {
+        Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        for (int i = 0; i < 5; i++) {
-            tracker.add(new Item("", "", 1));
-        }
-        Input stubInput = new StubInput(new String[] {"1", "6"});
-        new StartUI().actionExecutor(stubInput, tracker);
-        Item allItems[] = tracker.findAll();
-        Assert.assertThat(allItems.length, is (5));
+        tracker.add(new Item ("New Item"));
+        Input in = new StubInput(new String[] {"0", "1"});
+        UserAction[] actions = {
+                new ShowAllItemsAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        Assert.assertThat(out.toString(), is ("Menu" + System.lineSeparator()
+                + "0. Add new Item" + System.lineSeparator()
+                + "1. Show all items" + System.lineSeparator()
+                + "2. Edit item" + System.lineSeparator()
+                + "3. Delete item)" + System.lineSeparator()
+                + "4. Find item by Id" + System.lineSeparator()
+                + "5. Find items by name" + System.lineSeparator()
+                + "6. Exit Program"+ System.lineSeparator()));
     }
 
     @Test
