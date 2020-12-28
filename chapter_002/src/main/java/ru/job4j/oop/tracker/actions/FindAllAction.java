@@ -22,7 +22,7 @@ public class FindAllAction implements Action {
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Find all Items ===");
         Item[] items = tracker.findAll();
-        for (int i = 0; i < items.length - 1; i++) {
+        for (int i = 0; i < items.length; i++) {
             out.println(items[i]);
         }
         return true;

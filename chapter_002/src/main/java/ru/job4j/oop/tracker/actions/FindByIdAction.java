@@ -25,11 +25,10 @@ public class FindByIdAction implements Action {
         Item item = tracker.findById(id);
         if (item != null) {
             out.println(item);
-            return true;
         } else {
             out.println("Item with entered Id was not found");
-            return false;
         }
+        return true;
     }
 
     /*@Override

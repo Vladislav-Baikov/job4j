@@ -27,11 +27,10 @@ public class FindByNameAction implements Action {
             for (int i = 0; i < items.length - 1; i++) {
                 out.println(items[i]);
             }
-            return true;
         } else {
             out.println("Items with entered name was not found");
-            return false;
         }
+        return true;
     }
 
     /*@Override
