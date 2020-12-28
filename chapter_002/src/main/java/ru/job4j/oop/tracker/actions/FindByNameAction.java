@@ -24,7 +24,7 @@ public class FindByNameAction implements Action {
         String name = input.askStr("Enter name: ");
         Item[] items = tracker.findByName(name);
         if (items.length > 0) {
-            for (int i = 0; i < items.length - 1; i++) {
+            for (int i = 0; i < items.length; i++) {
                 out.println(items[i]);
             }
         } else {
