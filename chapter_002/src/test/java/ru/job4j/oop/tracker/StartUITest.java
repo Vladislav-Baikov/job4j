@@ -1,6 +1,8 @@
 package ru.job4j.oop.tracker;
 import org.junit.Assert;
 import org.junit.Test;
+import ru.job4j.oop.tracker.actions.FindAllAction;
+import ru.job4j.oop.tracker.actions.UserAction;
 import ru.job4j.oop.tracker.input.Input;
 import ru.job4j.oop.tracker.input.StubInput;
 import ru.job4j.oop.tracker.output.Output;
@@ -8,6 +10,7 @@ import ru.job4j.oop.tracker.output.StubOutput;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
 import ru.job4j.oop.tracker.ui.StartUI;
+import ru.job4j.oop.tracker.ui.StartUI2;
 
 import static org.hamcrest.Matchers.is;
 
@@ -45,12 +48,13 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         tracker.add(new Item ("New Item"));
-        Input in = new StubInput(new String[] {"0", "1"});
+        Input in = new StubInput(
+                new String[] {"0", "1"});
         UserAction[] actions = {
-                new ShowAllItemsAction(out),
+                new FindAllAction(out),
                 new ExitAction(out)
         };
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI2(out).init(in, tracker, actions);
         Assert.assertThat(out.toString(), is ("Menu" + System.lineSeparator()
                 + "0. Add new Item" + System.lineSeparator()
                 + "1. Show all items" + System.lineSeparator()
