@@ -1,24 +1,25 @@
 package ru.job4j.oop.tracker.actions;
 
 import ru.job4j.oop.tracker.input.Input;
+import ru.job4j.oop.tracker.output.ConsoleOutput;
 import ru.job4j.oop.tracker.output.Output;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class FindByIdAction implements Action {
 
-    private final Output out;
+    //private final Output out;
 
-    public FindByIdAction(Output out) {
+    /*public FindByIdAction(Output out) {
         this.out = out;
-    }
+    }*/
 
     @Override
     public String name() {
         return "Find by Id";
     }
 
-    @Override
+    /*@Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Find Item by Id ===");
         String id = input.askStr("Enter Id: ");
@@ -29,9 +30,9 @@ public class FindByIdAction implements Action {
             out.println("Item with entered Id was not found");
         }
         return true;
-    }
+    }*/
 
-    /*@Override
+    @Override
     public void doAction(Input input, Tracker tracker) {
         System.out.print("Enter id of Item you want to find: ");
         String id = input.input();
@@ -42,5 +43,5 @@ public class FindByIdAction implements Action {
             Output output = new ConsoleOutput();
             output.println(findItem);
         }
-    }*/
+    }
 }

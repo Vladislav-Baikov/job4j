@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.is;
 
 public class StartUITest {
 
-    @Test
+    /*@Test
     public void whenCreateItem() {
         Input stabInput = new StubInput(new String[] {"0", "Item name", "6"});
         Tracker tracker = new Tracker();
@@ -85,5 +85,5 @@ public class StartUITest {
         new StartUI().actionExecutor(stubInput, tracker);
         Item foundItems[] = tracker.findByName("name");
         Assert.assertThat(foundItems.length, is (3));
-    }
+    }*/
 }
