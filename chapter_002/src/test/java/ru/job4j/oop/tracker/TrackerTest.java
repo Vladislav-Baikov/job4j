@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 public class TrackerTest {
-    @Test
+    /*@Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
         long created = System.currentTimeMillis();
@@ -70,5 +70,5 @@ public class TrackerTest {
         tracker.add(item);
         Item result = tracker.findById(item.getId());
         assertThat(result, is(item));
-    }
+    }*/
 }

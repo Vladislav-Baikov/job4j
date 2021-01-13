@@ -7,18 +7,18 @@ import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class EditAction implements Action {
 
-    private final Output out;
+    //private final Output out;
 
-    public EditAction(Output out) {
+    /*public EditAction(Output out) {
         this.out = out;
-    }
+    }*/
 
     @Override
     public String name() {
         return "Edit";
     }
 
-    @Override
+    /*@Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Edit a Item ===");
         String id = input.askStr("Enter Id: ");
@@ -26,19 +26,19 @@ public class EditAction implements Action {
         Item newItem = new Item (name);
         tracker.replace(id, newItem);
         return true;
-    }
+    }*/
 
-    /*@Override
+    @Override
     public void doAction(Input input, Tracker tracker) {
         System.out.print("Enter id of Item to change: ");
         String id = input.input();
         System.out.print("Enter new name of Item: ");
         String name = input.input();
-        Item newItem = new Item(name, "new", 1);
+        Item newItem = new Item(name);
         if (tracker.replace(id, newItem)) {
             System.out.println("Success");
         } else {
             System.out.println("Fail");
         }
-    }*/
+    }
 }
