@@ -15,7 +15,7 @@ public class FindAllAction implements Action {
 
     @Override
     public String name() {
-        return "Find all";
+        return "Find all Items";
     }
 
     @Override

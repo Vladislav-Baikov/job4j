@@ -2,6 +2,7 @@ package ru.job4j.oop.tracker;
 import org.junit.Assert;
 import org.junit.Test;
 import ru.job4j.oop.tracker.actions.FindAllAction;
+import ru.job4j.oop.tracker.actions.FindByIdAction;
 import ru.job4j.oop.tracker.actions.UserAction;
 import ru.job4j.oop.tracker.input.Input;
 import ru.job4j.oop.tracker.input.StubInput;
@@ -55,24 +56,40 @@ public class StartUITest {
                 new ExitAction(out)
         };
         new StartUI2(out).init(in, tracker, actions);
-        Assert.assertThat(out.toString(), is ("Menu" + System.lineSeparator()
-                + "0. Add new Item" + System.lineSeparator()
-                + "1. Show all items" + System.lineSeparator()
-                + "2. Edit item" + System.lineSeparator()
-                + "3. Delete item)" + System.lineSeparator()
-                + "4. Find item by Id" + System.lineSeparator()
-                + "5. Find items by name" + System.lineSeparator()
-                + "6. Exit Program"+ System.lineSeparator()));
+        Assert.assertThat(out.toString(), is (
+                "Menu." + System.lineSeparator()
+                + "0. Find all Items" + System.lineSeparator()
+                + "1. Exit Program"+ System.lineSeparator()
+                + "=== Find all Items ===" + System.lineSeparator()
+                + "Item: Id=1, name=New Item" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. Find all Items" + System.lineSeparator()
+                + "1. Exit Program"+ System.lineSeparator()
+                + "=== Exit Program ===" + System.lineSeparator()));
     }
 
     @Test
     public void  whenFindByIdItem () {
+        Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        tracker.add(new Item("name", "", 1));
-        String id = (tracker.findByName("name")[0]).getId();
-        Input stubInput = new StubInput(new String[] {"4", id, "6"});
-        new StartUI().actionExecutor(stubInput, tracker);
-        Assert.assertThat(tracker.findById(id).getName(), is ("name"));
+        tracker.add(new Item ("New Item"));
+        Input in = new StubInput(
+                new String[] {"0", "1"});
+        UserAction[] actions = {
+                new FindByIdAction(out),
+                new ExitAction(out)
+        };
+        new StartUI2(out).init(in, tracker, actions);
+        Assert.assertThat(out.toString(), is (
+                "Menu." + System.lineSeparator()
+                        + "0. Find Item by Id" + System.lineSeparator()
+                        + "1. Exit Program"+ System.lineSeparator()
+                        + "=== Find Item by Id ===" + System.lineSeparator()
+                        + "Item: Id=1, name=New Item" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Find Item by Id" + System.lineSeparator()
+                        + "1. Exit Program"+ System.lineSeparator()
+                        + "=== Exit Program ===" + System.lineSeparator()));
     }
 
     @Test

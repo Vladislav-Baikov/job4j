@@ -15,7 +15,7 @@ public class FindByIdAction implements Action {
 
     @Override
     public String name() {
-        return "Find by Id";
+        return "Find Item by Id";
     }
 
     @Override
