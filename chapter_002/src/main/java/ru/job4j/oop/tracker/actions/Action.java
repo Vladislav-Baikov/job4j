@@ -6,6 +6,6 @@ import ru.job4j.oop.tracker.tracker.Tracker;
 public interface Action {
 
     String name();
-    //boolean execute (Input input, Tracker tracker);
-    void doAction(Input input, Tracker tracker);
+    boolean execute (Input input, Tracker tracker);
+    //void doAction(Input input, Tracker tracker);
 }
