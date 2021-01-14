@@ -7,5 +7,6 @@ public interface Action {
 
     String name();
     boolean execute (Input input, Tracker tracker);
+
     //void doAction(Input input, Tracker tracker);
 }

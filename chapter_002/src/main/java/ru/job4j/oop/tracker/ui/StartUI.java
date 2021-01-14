@@ -7,7 +7,7 @@ import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class StartUI {
 
-    public void actionExecutor(Input input, Tracker tracker) {
+    /*public void actionExecutor(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             this.showMenu();
@@ -35,7 +35,7 @@ public class StartUI {
                 run = false;
             }
         }
-    }
+    }*/
 
     private void showMenu() {
         System.out.println("Menu.");
@@ -48,7 +48,7 @@ public class StartUI {
         System.out.println("6. Exit Program");
     }
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         new StartUI().actionExecutor(new ConsoleInput(), new Tracker());
-    }
+    }*/
 }

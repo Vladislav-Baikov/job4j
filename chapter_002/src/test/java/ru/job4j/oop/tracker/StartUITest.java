@@ -1,10 +1,7 @@
 package ru.job4j.oop.tracker;
 import org.junit.Assert;
 import org.junit.Test;
-import ru.job4j.oop.tracker.actions.FindAllAction;
-import ru.job4j.oop.tracker.actions.FindByIdAction;
-import ru.job4j.oop.tracker.actions.FindByNameAction;
-import ru.job4j.oop.tracker.actions.UserAction;
+import ru.job4j.oop.tracker.actions.*;
 import ru.job4j.oop.tracker.input.Input;
 import ru.job4j.oop.tracker.input.StubInput;
 import ru.job4j.oop.tracker.output.Output;
@@ -18,7 +15,7 @@ import static org.hamcrest.Matchers.is;
 
 public class StartUITest {
 
-    *@Test
+    /*@Test
     public void whenCreateItem() {
         Input stabInput = new StubInput(new String[] {"0", "Item name", "6"});
         Tracker tracker = new Tracker();
@@ -43,7 +40,7 @@ public class StartUITest {
         new StartUI().actionExecutor(stabInput, tracker);
         Item allItems[] = tracker.findAll();
         Assert.assertThat(allItems.length, is (0));
-    }
+    }*/
 
     @Test
     public void  whenFindAllItems () {

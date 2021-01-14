@@ -8,27 +8,27 @@ import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class CreateAction implements Action {
 
-    //private final Output out;
+    private final Output out;
 
-    /*public CreateAction(Output out) {
+    public CreateAction(Output out) {
         this.out = out;
-    }*/
+    }
 
     @Override
     public String name() {
         return "Create";
     }
 
-    /*@Override
+    @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Create a new Item ===");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
         return true;
-    }*/
+    }
 
-    @Override
+    /*@Override
     public void doAction(Input input, Tracker tracker) {
         System.out.print("Enter name: ");
         String itemName = input.input();
@@ -40,5 +40,5 @@ public class CreateAction implements Action {
             Output consoleOutput = new ConsoleOutput();
             consoleOutput.println(addItem);
         }
-    }
+    }*/
 }
