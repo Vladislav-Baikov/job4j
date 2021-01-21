@@ -31,15 +31,14 @@ public class StartUI2 {
         }
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(output),
-                new Exit()
-                another actions
+                new ExitAction(output)
         };
-        new StartUI(output).init(input, tracker, actions);
-    }*/
+        new StartUI2(output).init(input, tracker, actions);
+    }
 }

@@ -8,12 +8,11 @@ import ru.job4j.oop.tracker.output.Output;
 import ru.job4j.oop.tracker.output.StubOutput;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
-import ru.job4j.oop.tracker.ui.StartUI;
 import ru.job4j.oop.tracker.ui.StartUI2;
 
 import static org.hamcrest.Matchers.is;
 
-public class StartUITest {
+public class StartUI2Test {
 
     /*@Test
     public void whenCreateItem() {
@@ -72,7 +71,7 @@ public class StartUITest {
         Tracker tracker = new Tracker();
         String id = tracker.add(new Item("New Item")).getId();
         Input in = new StubInput(
-                new String[] {"0", "1"});
+                new String[] {"0", id, "1"});
         UserAction[] actions = {
                 new FindByIdAction(out),
                 new ExitAction(out)

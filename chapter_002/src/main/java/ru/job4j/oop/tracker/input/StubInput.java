@@ -15,4 +15,14 @@ public class StubInput implements Input {
         position++;
         return result;
     }
+
+    @Override
+    public String askStr(){
+        return null;
+    }
+
+    @Override
+    public int askInt(){
+        return null;
+    }
 }
