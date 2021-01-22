@@ -48,7 +48,7 @@ public class StartUI2Test {
         String id = tracker.add(new Item ("New Item")).getId();
         Input in = new StubInput(
                 new String[] {"0", "1"});
-        UserAction[] actions = {
+        Action[] actions = {
                 new FindAllAction(out),
                 new ExitAction(out)
         };
@@ -72,7 +72,7 @@ public class StartUI2Test {
         String id = tracker.add(new Item("New Item")).getId();
         Input in = new StubInput(
                 new String[] {"0", id, "1"});
-        UserAction[] actions = {
+        Action[] actions = {
                 new FindByIdAction(out),
                 new ExitAction(out)
         };
@@ -97,7 +97,7 @@ public class StartUI2Test {
         String id = tracker.add(new Item("New Item")).getId();
         Input in = new StubInput(
                 new String[] {"0", "1"});
-        UserAction[] actions = {
+        Action[] actions = {
                 new FindByNameAction(out),
                 new ExitAction(out)
         };

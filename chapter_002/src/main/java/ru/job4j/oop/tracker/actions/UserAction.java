@@ -5,7 +5,7 @@ import ru.job4j.oop.tracker.output.ConsoleOutput;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class UserAction {
-    public void ShowAllItemsAction(ConsoleOutput out) {
+    /*public void ShowAllItemsAction(ConsoleOutput out) {
     }
     public void FindByIdItem(ConsoleOutput out) {
     }
@@ -14,5 +14,5 @@ public class UserAction {
     }
     public String name() {
        return name();
-    }
+    }*/
 }

@@ -14,17 +14,22 @@ public class StartUI2 {
         this.out = out;
     }
 
-    public void init(Input input, Tracker tracker, UserAction[] actions) {
-        boolean run = true;
+    private boolean run = true;
+
+    public void launch (boolean on) {
+        this.run = on;
+    }
+
+    public void init(Input input, Tracker tracker, Action[] actions) {
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
-            UserAction action = actions[select];
+            Action action = actions[select];
             run = action.execute(input, tracker);
         }
     }
 
-    private void showMenu(UserAction[] actions) {
+    private void showMenu(Action[] actions) {
         out.println("Menu.");
         for (int index = 0; index < actions.length; index++) {
             out.println(index + ". " + actions[index].name());
@@ -35,7 +40,7 @@ public class StartUI2 {
         Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
+        Action[] actions = {
                 new CreateAction(output),
                 new ExitAction(output)
         };

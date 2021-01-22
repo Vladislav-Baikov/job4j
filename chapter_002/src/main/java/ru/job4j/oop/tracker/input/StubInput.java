@@ -17,12 +17,13 @@ public class StubInput implements Input {
     }
 
     @Override
-    public String askStr(){
-        return null;
+    public String askStr (String question) {
+        return question;
     }
 
     @Override
-    public int askInt(){
-        return null;
+    public int askInt (String question) {
+        int select = Integer.parseInt(question);
+        return select;
     }
 }
