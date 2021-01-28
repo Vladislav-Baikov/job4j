@@ -15,11 +15,12 @@ public class ExitAction implements Action {
 
     @Override
     public String name() {
-        return "Exit program";
+        return "Exit Program";
     }
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
+        out.println("=== Exit Program ===");
         return false;
     }
 }

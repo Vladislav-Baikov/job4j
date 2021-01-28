@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Item {
     private String id;
     private String name;
-    private String desc;
-    private long time;
+    //private String desc;
+    //private long time;
 
     public Item(String name) {
         this.name = name;
@@ -25,7 +25,7 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-    public String getDecs() {
+    /*public String getDecs() {
         return desc;
     }
     public void setDecs(String decs) {
@@ -36,8 +36,8 @@ public class Item {
     }
     public void setTime(long time) {
         this.time = time;
-    }
-    @Override
+    }*/
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -53,10 +53,11 @@ public class Item {
                 Objects.equals(name, item.name)
                 &&
                 Objects.equals(desc, item.desc);
-    }
+    }*/
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, desc, time);
+        return Objects.hash(id, name);
+        //return Objects.hash(id, name, desc, time);
     }
 
     @Override
@@ -64,8 +65,8 @@ public class Item {
         return "Item{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
-                ", time=" + time +
+                //", desc='" + desc + '\'' +
+                //", time=" + time +
                 '}';
     }
 }
