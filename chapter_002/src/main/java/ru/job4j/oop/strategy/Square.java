@@ -1,17 +1,17 @@
 package ru.job4j.oop.strategy;
 
-public class Square implements Shape{
+public class Square implements Shape {
     @Override
     public String draw() {
         String ln = System.lineSeparator();
         return
-                "-------" + ln +
-                "|     |" + ln +
-                "|     |" + ln +
-                "-------";
+                "-------" + ln
+            +   "|     |" + ln
+            +   "|     |" + ln
+            +   "-------";
         }
 
-        public void main (String[] args){
+        public void main(String[] args) {
             System.out.println(new Square().draw());
     }
 }
