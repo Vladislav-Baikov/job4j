@@ -42,10 +42,10 @@ public class StartUI2Test {
     }*/
 
     @Test
-    public void  whenFindAllItems () {
+    public void  whenFindAllItems() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        String id = tracker.add(new Item ("New Item")).getId();
+        String id = tracker.add(new Item("New Item")).getId();
         Input in = new StubInput(
                 new String[] {"0", "1"});
         Action[] actions = {
@@ -53,20 +53,20 @@ public class StartUI2Test {
                 new ExitAction(out)
         };
         new StartUI2(out).init(in, tracker, actions);
-        Assert.assertThat(out.toString(), is (
+        Assert.assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                 + "0. Find all Items" + System.lineSeparator()
-                + "1. Exit Program"+ System.lineSeparator()
+                + "1. Exit Program" + System.lineSeparator()
                 + "=== Find all Items ===" + System.lineSeparator()
                 + "Item{id='" + id + "', name='New Item'}" + System.lineSeparator()
                 + "Menu." + System.lineSeparator()
                 + "0. Find all Items" + System.lineSeparator()
-                + "1. Exit Program"+ System.lineSeparator()
+                + "1. Exit Program" + System.lineSeparator()
                 + "=== Exit Program ===" + System.lineSeparator()));
     }
 
     @Test
-    public void  whenFindByIdItem () {
+    public void  whenFindByIdItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         String id = tracker.add(new Item("New Item")).getId();
@@ -77,21 +77,21 @@ public class StartUI2Test {
                 new ExitAction(out)
         };
         new StartUI2(out).init(in, tracker, actions);
-        Assert.assertThat(out.toString(), is (
+        Assert.assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                         + "0. Find Item by Id" + System.lineSeparator()
-                        + "1. Exit Program"+ System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
                         + "=== Find Item by Id ===" + System.lineSeparator()
                         //+ "Enter Id: "+ id + System.lineSeparator()
                         + "Item{id='" + id + "', name='New Item'}" + System.lineSeparator()
                         + "Menu." + System.lineSeparator()
                         + "0. Find Item by Id" + System.lineSeparator()
-                        + "1. Exit Program"+ System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
                         + "=== Exit Program ===" + System.lineSeparator()));
     }
 
     @Test
-    public void  whenFindByNameItem () {
+    public void  whenFindByNameItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         String id = tracker.add(new Item("New Item")).getId();
@@ -102,16 +102,16 @@ public class StartUI2Test {
                 new ExitAction(out)
         };
         new StartUI2(out).init(in, tracker, actions);
-        Assert.assertThat(out.toString(), is (
+        Assert.assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                         + "0. Find Item by Name" + System.lineSeparator()
-                        + "1. Exit Program"+ System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
                         + "=== Find Item by name ===" + System.lineSeparator()
                         //+ "Enter name: New Item" + System.lineSeparator()
                         + "Item{id='" + id + "', name='New Item'}" + System.lineSeparator()
                         + "Menu." + System.lineSeparator()
                         + "0. Find Item by Name" + System.lineSeparator()
-                        + "1. Exit Program"+ System.lineSeparator()
+                        + "1. Exit Program" + System.lineSeparator()
                         + "=== Exit Program ===" + System.lineSeparator()));
     }
 }

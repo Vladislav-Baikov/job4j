@@ -5,7 +5,7 @@ import ru.job4j.oop.tracker.output.ConsoleOutput;
 import ru.job4j.oop.tracker.output.Output;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
-public class DeleteAction implements Action{
+public class DeleteAction implements Action {
 
     private final Output out;
 

@@ -1,6 +1,6 @@
 package ru.job4j.oop.tracker.output;
 
-public class StubOutput implements Output{
+public class StubOutput implements Output {
     private final StringBuilder buffer = new StringBuilder();
 
     @Override

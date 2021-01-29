@@ -16,7 +16,7 @@ public class StartUI2 {
 
     private boolean run = true;
 
-    public void launch (boolean on) {
+    public void launch(boolean on) {
         this.run = on;
     }
 
