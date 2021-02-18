@@ -8,11 +8,11 @@ import ru.job4j.oop.tracker.output.Output;
 import ru.job4j.oop.tracker.output.StubOutput;
 import ru.job4j.oop.tracker.tracker.Item;
 import ru.job4j.oop.tracker.tracker.Tracker;
-import ru.job4j.oop.tracker.ui.StartUI2;
+import ru.job4j.oop.tracker.ui.StartUI;
 
 import static org.hamcrest.Matchers.is;
 
-public class StartUI2Test {
+public class StartUITest {
 
     /*@Test
     public void whenCreateItem() {
@@ -52,7 +52,7 @@ public class StartUI2Test {
                 new FindAllAction(out),
                 new ExitAction(out)
         };
-        new StartUI2(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, actions);
         Assert.assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                 + "0. Find all Items" + System.lineSeparator()
@@ -76,7 +76,7 @@ public class StartUI2Test {
                 new FindByIdAction(out),
                 new ExitAction(out)
         };
-        new StartUI2(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, actions);
         Assert.assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                         + "0. Find Item by Id" + System.lineSeparator()
@@ -101,7 +101,7 @@ public class StartUI2Test {
                 new FindByNameAction(out),
                 new ExitAction(out)
         };
-        new StartUI2(out).init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, actions);
         Assert.assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator()
                         + "0. Find Item by Name" + System.lineSeparator()
