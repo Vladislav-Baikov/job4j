@@ -23,13 +23,14 @@ public class StartUI {
     }
 
     public void init(Input input, Tracker tracker, Action[] actions) {
+        boolean run = true;
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
-            /*if (select < 0 || select >= actions.length) {
+            if (select < 0 || select >= actions.length) {
                 out.println("Wrong input, you can select: 0 .. " + (actions.length - 1));
                 continue;
-            }*/
+            }
             Action action = actions[select];
             run = action.execute(input, tracker);
         }
@@ -48,7 +49,8 @@ public class StartUI {
         Tracker tracker = new Tracker();
         Action[] actions = {
                 new CreateAction(output),
-                new ExitAction(output)
+                new ExitAction(output),
+                new FindAllAction(output)
         };
         new StartUI(output).init(input, tracker, actions);
     }

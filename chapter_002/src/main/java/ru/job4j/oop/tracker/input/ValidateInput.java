@@ -9,8 +9,8 @@ public class ValidateInput extends ConsoleInput {
             try {
                 value = super.askInt(question);
                 invalid = false;
-            /*} catch (NumberFormatException nfe) {
-                System.out.println("Please enter validate data again.");*/
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter validate data again.");
             } catch (ArrayIndexOutOfBoundsException aio) {
                 System.out.println("Please enter validate number of action");
             }
