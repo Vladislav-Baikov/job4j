@@ -27,18 +27,4 @@ public class EditAction implements Action {
         tracker.replace(id, newItem);
         return true;
     }
-
-    /*@Override
-    public void doAction(Input input, Tracker tracker) {
-        System.out.print("Enter id of Item to change: ");
-        String id = input.input();
-        System.out.print("Enter new name of Item: ");
-        String name = input.input();
-        Item newItem = new Item(name);
-        if (tracker.replace(id, newItem)) {
-            System.out.println("Success");
-        } else {
-            System.out.println("Fail");
-        }
-    }*/
 }

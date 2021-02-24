@@ -31,17 +31,4 @@ public class FindByIdAction implements Action {
         }
         return true;
     }
-
-    /*@Override
-    public void doAction(Input input, Tracker tracker) {
-        System.out.print("Enter id of Item you want to find: ");
-        String id = input.input();
-        Item findItem = tracker.findById(id);
-        if (findItem == null) {
-            System.out.println("Item with entered id is not found");
-        } else {
-            Output output = new ConsoleOutput();
-            output.println(findItem);
-        }
-    }*/
 }

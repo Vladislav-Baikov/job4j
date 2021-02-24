@@ -15,13 +15,6 @@ public class StartUI {
         this.out = out;
     }
 
-    private boolean run = true;
-
-
-    public void launch(boolean on) {
-        this.run = on;
-    }
-
     public void init(Input input, Tracker tracker, Action[] actions) {
         boolean run = true;
         while (run) {
@@ -49,6 +42,10 @@ public class StartUI {
         Tracker tracker = new Tracker();
         Action[] actions = {
                 new CreateAction(output),
+                new DeleteAction(output),
+                new EditAction(output),
+                new FindByIdAction(output),
+                new FindByNameAction(output),
                 new FindAllAction(output),
                 new ExitAction(output)
         };

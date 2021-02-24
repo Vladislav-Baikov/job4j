@@ -28,14 +28,4 @@ public class FindAllAction implements Action {
         }
         return true;
     }
-
-    /*@Override
-    public void doAction (Input input, Tracker tracker) {
-        Item[] allItems = tracker.findAll();
-        System.out.println("List of all Items:");
-        for (int i = 0; i < allItems.length; i++) {
-            Output output = new ConsoleOutput();
-            output.println(allItems[i]);
-        }
-    }*/
 }
