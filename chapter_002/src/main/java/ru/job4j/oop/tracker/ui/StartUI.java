@@ -9,6 +9,7 @@ import ru.job4j.oop.tracker.output.Output;
 import ru.job4j.oop.tracker.tracker.Tracker;
 
 public class StartUI {
+
     private final Output out;
 
     public StartUI(Output out) {
