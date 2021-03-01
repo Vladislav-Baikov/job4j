@@ -1,14 +1,13 @@
 package ru.job4j.oop.tracker.tracker;
 
 import java.util.Arrays;
-
 import static java.lang.Math.random;
 
-public class Tracker {
+public final class Tracker {
     /**
      * Массив для хранение заявок.
      */
-    private final Item[] items = new Item[100];
+    private Item[] items = new Item[100];
     /**
      * Указатель ячейки для новой заявки.
      */
