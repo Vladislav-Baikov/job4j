@@ -1,4 +1,4 @@
-package test.ru.job4j.collection.search;
+package test.java.ru.job4j.collection.search;
 
 import main.java.ru.job4j.collection.search.Person;
 import main.java.ru.job4j.collection.search.PhoneDictionary;

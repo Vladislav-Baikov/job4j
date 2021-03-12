@@ -1,4 +1,4 @@
-package test.ru.job4j.collection;
+package test.java.ru.job4j.collection;
 
 import main.java.ru.job4j.collection.ConvertList2Array;
 import org.junit.Ignore;
