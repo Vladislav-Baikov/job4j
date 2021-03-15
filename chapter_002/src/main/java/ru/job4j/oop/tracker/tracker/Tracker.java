@@ -1,5 +1,6 @@
 package ru.job4j.oop.tracker.tracker;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import static java.lang.Math.random;
 
@@ -7,18 +8,18 @@ public final class Tracker {
     /**
      * Массив для хранение заявок.
      */
-    private final Item[] items = new Item[100];
+    private final ArrayList<Item> items = new ArrayList<>();
     /**
      * Указатель ячейки для новой заявки.
      */
-    private int position = 0;
+    //private int position = 0;
     /**
      * Метод реализаущий добавление заявки в хранилище
      * @param item новая заявка
      */
     public Item add(Item item) {
         item.setId(this.generateId());
-        this.items[this.position++] = item;
+        this.items.add(item);
         return item;
     }
     /**
@@ -29,9 +30,9 @@ public final class Tracker {
     public boolean replace(String id, Item item) {
         boolean result = false;
         item.setId(id);
-        for (int i = 0; i < position; i++) {
-            if (items[i].getId().equals(id)) {
-                items[i] = item;
+        for (Item item: items) {
+            if (item.getId().equals(id)) {
+                items.set(item.getId(), item);
                 result = true;
                 break;
             }
