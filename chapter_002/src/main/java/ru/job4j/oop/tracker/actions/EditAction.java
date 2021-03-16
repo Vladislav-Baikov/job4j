@@ -21,7 +21,7 @@ public class EditAction implements Action {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Edit a Item ===");
-        String id = input.askStr("Enter Id: ");
+        int id = Integer.parseInt(input.askStr("Enter Id: "));
         String name = input.askStr("Enter name of new Item: ");
         Item newItem = new Item(name);
         tracker.replace(id, newItem);

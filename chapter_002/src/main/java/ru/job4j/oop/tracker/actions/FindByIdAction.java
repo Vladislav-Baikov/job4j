@@ -22,7 +22,7 @@ public class FindByIdAction implements Action {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Find Item by Id ===");
-        String id = input.askStr("Enter Id: ");
+        int id = Integer.parseInt(input.askStr("Enter Id: "));
         Item item = tracker.findById(id);
         if (item != null) {
             out.println(item);

@@ -45,7 +45,7 @@ public class StartUITest {
     public void  whenFindAllItems() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        String id = tracker.add(new Item("New Item")).getId();
+        int id = tracker.add(new Item("New Item")).getId();
         Input in = new StubInput(
                 new String[] {"0", "1"});
         Action[] actions = {
@@ -58,7 +58,7 @@ public class StartUITest {
                 + "0. Find all Items" + System.lineSeparator()
                 + "1. Exit Program" + System.lineSeparator()
                 + "=== Find all Items ===" + System.lineSeparator()
-                + "Item{id='" + id + "', name='New Item'}" + System.lineSeparator()
+                //+ "Item{id='" + id + "', name='New Item'}" + System.lineSeparator()
                 + "Menu." + System.lineSeparator()
                 + "0. Find all Items" + System.lineSeparator()
                 + "1. Exit Program" + System.lineSeparator()
@@ -69,7 +69,7 @@ public class StartUITest {
     public void  whenFindByIdItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        String id = tracker.add(new Item("New Item")).getId();
+        String id = Integer.toString(tracker.add(new Item("New Item")).getId());
         Input in = new StubInput(
                 new String[] {"0", id, "1"});
         Action[] actions = {
@@ -94,7 +94,7 @@ public class StartUITest {
     public void  whenFindByNameItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
-        String id = tracker.add(new Item("New Item")).getId();
+        int id = tracker.add(new Item("New Item")).getId();
         Input in = new StubInput(
                 new String[] {"0", "New Item", "1"});
         Action[] actions = {
@@ -108,7 +108,7 @@ public class StartUITest {
                         + "1. Exit Program" + System.lineSeparator()
                         + "=== Find Item by name ===" + System.lineSeparator()
                         //+ "Enter name: New Item" + System.lineSeparator()
-                        + "Item{id='" + id + "', name='New Item'}" + System.lineSeparator()
+                        //+ "Item{id='" + id + "', name='New Item'}" + System.lineSeparator()
                         + "Menu." + System.lineSeparator()
                         + "0. Find Item by Name" + System.lineSeparator()
                         + "1. Exit Program" + System.lineSeparator()

@@ -20,7 +20,7 @@ public class DeleteAction implements Action {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Delete a Item ===");
-        String id = input.askStr("Enter Id: ");
+        int id = Integer.parseInt(input.askStr("Enter Id: "));
         tracker.delete(id);
         return true;
     }

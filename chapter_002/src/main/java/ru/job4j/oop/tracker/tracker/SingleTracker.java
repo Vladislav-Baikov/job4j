@@ -1,5 +1,7 @@
 package ru.job4j.oop.tracker.tracker;
 
+import java.util.ArrayList;
+
 public final class SingleTracker {
 
     private final Tracker tracker = new Tracker();
@@ -17,23 +19,23 @@ public final class SingleTracker {
         return tracker.add(item);
     }
 
-    public boolean replace(String id, Item item) {
+    public boolean replace(int id, Item item) {
         return tracker.replace(id, item);
     }
 
-    public boolean delete(String id) {
+    public boolean delete(int id) {
         return tracker.delete(id);
     }
 
-    public Item[] findAll() {
+    public ArrayList<Item> findAll() {
         return tracker.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public ArrayList<Item> findByName(String key) {
         return tracker.findByName(key);
     }
 
-    public String generateId() {
+    public int generateId() {
         return tracker.generateId();
     }
 
