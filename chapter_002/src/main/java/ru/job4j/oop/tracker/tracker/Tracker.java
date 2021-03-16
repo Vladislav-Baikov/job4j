@@ -9,7 +9,7 @@ public final class Tracker {
     /**
      * Массив для хранение заявок.
      */
-    private final ArrayList<Item> items = new ArrayList<>();
+    private final List<Item> items = new ArrayList<>();
     /**
      * Указатель ячейки для новой заявки.
      */
@@ -30,10 +30,9 @@ public final class Tracker {
      */
     public boolean replace(int id, Item item) {
         boolean result = false;
-        item.setId(id);
-        for (Item itemI: items) {
-            if (itemI.getId() == id) {
-                items.set(itemI.getId(), item);
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId() == id) {
+                items.set(i, item);
                 result = true;
                 break;
             }
@@ -47,9 +46,9 @@ public final class Tracker {
      */
     public boolean delete(int id) {
         boolean result = false;
-        for (Item itemI: items) {
-            if (itemI.getId() == id) {
-                items.remove(itemI.getId());
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId() == id) {
+                items.remove(i);
                 result = true;
             }
         }
@@ -59,14 +58,14 @@ public final class Tracker {
      * Метод возвращает массив items без null элементов
      * @return allItems
      */
-    public ArrayList<Item> findAll() {
+    public List<Item> findAll() {
         return this.items;
     }
     /**
      * Метод возвращает массив items без null элементов
      * @return allItems
      */
-    public ArrayList<Item> findByName(String key) {
+    public List<Item> findByName(String key) {
         ArrayList<Item> result = new ArrayList<Item>();
         for (Item itemI: items) {
             if (itemI.getName().equals(key)) {
@@ -92,6 +91,7 @@ public final class Tracker {
         for (Item itemI: items) {
             if (itemI.getId() == id) {
                 result = itemI;
+                break;
             }
         }
         return result;
