@@ -11,10 +11,6 @@ public final class Tracker {
      */
     private final List<Item> items = new ArrayList<>();
     /**
-     * Указатель ячейки для новой заявки.
-     */
-    //private int position = 0;
-    /**
      * Метод реализаущий добавление заявки в хранилище
      * @param item новая заявка
      */
@@ -50,6 +46,7 @@ public final class Tracker {
             if (items.get(i).getId() == id) {
                 items.remove(i);
                 result = true;
+                break;
             }
         }
         return result;
@@ -66,7 +63,7 @@ public final class Tracker {
      * @return allItems
      */
     public List<Item> findByName(String key) {
-        ArrayList<Item> result = new ArrayList<Item>();
+        List<Item> result = new ArrayList<>();
         for (Item itemI: items) {
             if (itemI.getName().equals(key)) {
                 result.add(itemI);
