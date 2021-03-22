@@ -3,12 +3,7 @@ package ru.job4j.oop.tracker.sort;
 import org.junit.Test;
 import java.util.List;
 import ru.job4j.oop.tracker.tracker.Item;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-
 import java.util.*;
-
-import static org.junit.Assert.*;
 
 public class ItemSorterTest {
 
