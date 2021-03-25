@@ -19,11 +19,12 @@ public class JobTest {
     }
 
     @Test
-    public void whenComparatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new SortAscByName().thenComparing(new SortAscByPriority());
-        int rsl = cmpNamePriority.compare(
+    public void whenComparatorByPriorityAndName() {
+        Comparator<Job> cmpPriorityName = new SortAscByPriority().thenComparing(new SortAscByName());
+        int rsl = cmpPriorityName.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
         );
+        assertThat(rsl, lessThan(0));
     }
 }
