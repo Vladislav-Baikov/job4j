@@ -1,6 +1,6 @@
 package test.java.ru.job4j.collection;
 
-import main.java.ru.job4j.collection.User;
+import ru.job4j.collection.User;
 import org.junit.Test;
 
 import java.util.Iterator;

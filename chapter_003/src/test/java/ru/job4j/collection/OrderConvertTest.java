@@ -1,7 +1,7 @@
 package test.java.ru.job4j.collection;
 
-import main.java.ru.job4j.collection.Order;
-import main.java.ru.job4j.collection.OrderConvert;
+import ru.job4j.collection.Order;
+import ru.job4j.collection.OrderConvert;
 import org.junit.Test;
 
 import java.util.ArrayList;

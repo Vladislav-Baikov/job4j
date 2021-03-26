@@ -1,7 +1,8 @@
 package test.java.ru.job4j.collection.job;
 
-import main.java.ru.job4j.collection.job.*;
 import org.junit.Test;
+import ru.job4j.collection.job.*;
+
 import java.util.Comparator;
 
 import static org.hamcrest.Matchers.greaterThan;

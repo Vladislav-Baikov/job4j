@@ -1,8 +1,7 @@
 package test.java.ru.job4j.collection.job;
 
-import main.java.ru.job4j.collection.job.Job;
-import main.java.ru.job4j.collection.job.SortDescByName;
-import main.java.ru.job4j.collection.job.SortDescByPriority;
+import ru.job4j.collection.job.Job;
+import ru.job4j.collection.job.SortDescByPriority;
 import org.junit.Test;
 
 import java.util.ArrayList;

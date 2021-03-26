@@ -1,7 +1,6 @@
 package test.java.ru.job4j.collection;
 
-import main.java.ru.job4j.collection.ConvertList2Array;
-import org.junit.Ignore;
+import ru.job4j.collection.ConvertList2Array;
 import org.junit.Test;
 
 import java.util.Arrays;

@@ -1,6 +1,6 @@
 package test.java.ru.job4j.collection;
 
-import main.java.ru.job4j.collection.ConvertList;
+import ru.job4j.collection.job.ConvertList;
 import org.junit.Test;
 
 import java.util.ArrayList;
