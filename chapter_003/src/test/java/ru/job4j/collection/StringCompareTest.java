@@ -2,6 +2,7 @@ package test.java.ru.job4j.collection;
 
 import main.java.ru.job4j.collection.StringCompare;
 import org.junit.Test;
+
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.core.Is.is;
@@ -19,7 +20,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenLeftLessThanRightResultShouldBeNegative () {
+    public void whenLeftLessThanRightAreEqualResultShouldBeNegative () {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Ivanov",
@@ -29,7 +30,7 @@ public class StringCompareTest {
     }
 
     @Test
-    public void whenLeftGreaterThanRightResultShouldBePositive () {
+    public void whenLeftGreaterThanRightAreEqualResultShouldBePositive () {
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Ivanova",
@@ -49,6 +50,17 @@ public class StringCompareTest {
     }
 
     @Test
+    public void whenLeftGreaterThanRightResultShouldBePositive () {
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "Petrova",
+                "Ivanov"
+        );
+        assertThat(rst, greaterThan(0));
+    }
+
+
+    @Test
     public void secondCharOfLeftGreaterThanRightShouldBePositive(){
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
@@ -60,6 +72,16 @@ public class StringCompareTest {
 
     @Test
     public void secondCharOfLeftLessThanRightShouldBeNegative(){
+        StringCompare compare = new StringCompare();
+        int rst = compare.compare(
+                "Patrov",
+                "Petrov"
+        );
+        assertThat(rst, lessThan(0));
+    }
+
+    @Test
+    public void secondCharOfLeftLessThanRightLeftGreaterThanRightShouldBeNegative(){
         StringCompare compare = new StringCompare();
         int rst = compare.compare(
                 "Patrova",

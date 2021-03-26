@@ -1,5 +1,6 @@
 package main.java.ru.job4j.collection;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -16,36 +17,22 @@ public class StringCompare implements Comparator<String> {
             charsRight.add(right.charAt(i));
         }
 
-        if (left.length() < right.length()) {
-            result = -1;
-            for (int i = 0; i < left.length(); i++) {
-                if (Character.compare(charsLeft.get(i), charsRight.get(i)) < 0) {
-                    result = Character.compare(charsLeft.get(i), charsRight.get(i));
-                    break;
-                }
+        for (int i = 0; i < Math.min(charsLeft.size(), charsRight.size()); i++) {
+            if (charsLeft.get(i) < charsRight.get(i)) {
+                result = -1;
+                break;
             }
-
-        }
-
-        if (left.length() > right.length()) {
-            result = 1;
-            for (int i = 0; i < right.length(); i++) {
-                if (Character.compare(charsLeft.get(i), charsRight.get(i)) < 0) {
-                    result = Character.compare(charsLeft.get(i), charsRight.get(i));
-                    break;
-                }
-            }
-
-        }
-        /*for (int i = 0; i < left.length(); i++) {
-            result = Character.compare(charsLeft.get(i), charsRight.get(i));
-            if (result != 0) {
+            if (charsLeft.get(i) > charsRight.get(i)) {
+                result = 1;
                 break;
             }
         }
-        if (right.length() > left.length() && result == 0) {
+        if (charsLeft.size() < charsRight.size() && result == 0) {
             result = -1;
-        }*/
+        }
+        if (charsLeft.size() > charsRight.size() && result == 0) {
+            result = 1;
+        }
         return result;
     }
 }
