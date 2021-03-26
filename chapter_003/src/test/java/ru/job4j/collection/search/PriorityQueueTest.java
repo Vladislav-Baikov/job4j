@@ -1,7 +1,5 @@
-package test.java.ru.job4j.collection.search;
+package ru.job4j.collection.search;
 
-import ru.job4j.collection.search.PriorityQueue;
-import ru.job4j.collection.search.Task;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

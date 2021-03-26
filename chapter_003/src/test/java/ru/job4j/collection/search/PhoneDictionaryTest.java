@@ -1,7 +1,5 @@
-package test.java.ru.job4j.collection.search;
+package ru.job4j.collection.search;
 
-import ru.job4j.collection.search.Person;
-import ru.job4j.collection.search.PhoneDictionary;
 import org.junit.Test;
 import java.util.ArrayList;
 
