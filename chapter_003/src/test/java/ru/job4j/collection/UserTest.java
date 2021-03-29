@@ -1,6 +1,5 @@
-package test.java.ru.job4j.collection;
+package ru.job4j.collection;
 
-import ru.job4j.collection.User;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -9,7 +8,7 @@ import java.util.TreeSet;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class UserTest {
     @Test

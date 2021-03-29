@@ -16,7 +16,7 @@ public class ArrayMergeTest {
         ArrayMerge test = new ArrayMerge();
         int[] first = new int[]{1, 3, 5};
         int[] second = new int[]{2, 4};
-        int[] result = test.Merge(first, second);
+        int[] result = test.merge(first, second);
         int[] expect = new int[]{1, 2, 3, 4, 5};
         assertThat(result, Matchers.is(expect));
     }

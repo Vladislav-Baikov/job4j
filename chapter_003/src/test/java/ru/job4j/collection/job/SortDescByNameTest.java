@@ -1,4 +1,4 @@
-package test.java.ru.job4j.collection.job;
+package ru.job4j.collection.job;
 
 import ru.job4j.collection.job.Job;
 import ru.job4j.collection.job.SortDescByName;

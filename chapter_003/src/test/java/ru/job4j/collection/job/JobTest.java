@@ -1,4 +1,4 @@
-package test.java.ru.job4j.collection.job;
+package ru.job4j.collection.job;
 
 import org.junit.Test;
 import ru.job4j.collection.job.*;
@@ -7,7 +7,8 @@ import java.util.Comparator;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
-import static org.junit.Assert.assertThat;
+//import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class JobTest {
     @Test

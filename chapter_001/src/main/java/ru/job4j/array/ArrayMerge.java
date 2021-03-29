@@ -5,7 +5,7 @@ package ru.job4j.array;
  * @since 14.03.19
  */
 public class ArrayMerge {
-    public int[] Merge(int[] first, int[] second) {
+    public int[] merge(int[] first, int[] second) {
         int[] array = new int[first.length + second.length];
         int markerFirst = 0;
         int markerSecond = 0;
